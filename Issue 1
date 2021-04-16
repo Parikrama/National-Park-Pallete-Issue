@@ -1,0 +1,9 @@
+ggplot(GH_Mapping_WithBiomass, aes(x= treatment,
+                                   y = AGB_P2,
+                                   group = plant,
+                                   color = plant,
+                                   park_palette("Zion")))+
+   geom_point( shape = "circle")+
+   facet_grid(plant~., scales = "free_y")+
+   stat_summary(fun.data = "mean_se", geom = "errorbar")
+   
